@@ -1,0 +1,218 @@
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+	<TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
+    <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Files not to show in IDE -->
+    <None Remove="yarn.lock" />
+
+    <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Content Remove="ClientApp\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\assets\css\handsontable.css" />
+    <Content Include="wwwroot\assets\favicon-16x16.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\assets\favicon.ico" />
+    <Content Include="wwwroot\assets\fonts\socicon.eot" />
+    <Content Include="wwwroot\assets\fonts\socicon.svg" />
+    <Content Include="wwwroot\assets\fonts\socicon.ttf" />
+    <Content Include="wwwroot\assets\fonts\socicon.woff" />
+    <Content Include="wwwroot\assets\fonts\socicon.woff2" />
+    <Content Include="wwwroot\assets\i18n\US\en.json" />
+    <Content Include="wwwroot\assets\icon\android-icon-192x192.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-114x114.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-120x120.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-144x144.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-152x152.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-180x180.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-57x57.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-60x60.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-72x72.png" />
+    <Content Include="wwwroot\assets\icon\apple-icon-76x76.png" />
+    <Content Include="wwwroot\assets\icon\favicon-16x16.png" />
+    <Content Include="wwwroot\assets\icon\favicon-32x32.png" />
+    <Content Include="wwwroot\assets\icon\favicon-96x96.png" />
+    <Content Include="wwwroot\assets\icon\ms-icon-144x144.png" />
+    <Content Include="wwwroot\assets\images\76ers.gif" />
+    <Content Include="wwwroot\assets\images\blazers.gif" />
+    <Content Include="wwwroot\assets\images\bucks.gif" />
+    <Content Include="wwwroot\assets\images\bulls.gif" />
+    <Content Include="wwwroot\assets\images\cavaliers.gif" />
+    <Content Include="wwwroot\assets\images\celtic.gif" />
+    <Content Include="wwwroot\assets\images\clippers.gif" />
+    <Content Include="wwwroot\assets\images\hawks.gif" />
+    <Content Include="wwwroot\assets\images\heat.gif" />
+    <Content Include="wwwroot\assets\images\hornets.gif" />
+    <Content Include="wwwroot\assets\images\jazz.gif" />
+    <Content Include="wwwroot\assets\images\kings.gif" />
+    <Content Include="wwwroot\assets\images\knicks.gif" />
+    <Content Include="wwwroot\assets\images\lakers.gif" />
+    <Content Include="wwwroot\assets\images\magic.gif" />
+    <Content Include="wwwroot\assets\images\mavericks.gif" />
+    <Content Include="wwwroot\assets\images\memphis.gif" />
+    <Content Include="wwwroot\assets\images\nets.gif" />
+    <Content Include="wwwroot\assets\images\nuggets.gif" />
+    <Content Include="wwwroot\assets\images\orleans.gif" />
+    <Content Include="wwwroot\assets\images\pacers.gif" />
+    <Content Include="wwwroot\assets\images\pistons.gif" />
+    <Content Include="wwwroot\assets\images\raptors.gif" />
+    <Content Include="wwwroot\assets\images\rockets.gif" />
+    <Content Include="wwwroot\assets\images\spurs.gif" />
+    <Content Include="wwwroot\assets\images\suns.gif" />
+    <Content Include="wwwroot\assets\images\thunder.gif" />
+    <Content Include="wwwroot\assets\images\timberwolves.gif" />
+    <Content Include="wwwroot\assets\images\warriors.gif" />
+    <Content Include="wwwroot\assets\images\wizards.gif" />
+    <Content Include="wwwroot\assets\img\app\browsers\chrome.svg" />
+    <Content Include="wwwroot\assets\img\app\browsers\firefox.svg" />
+    <Content Include="wwwroot\assets\img\app\browsers\ie.svg" />
+    <Content Include="wwwroot\assets\img\app\browsers\opera.svg" />
+    <Content Include="wwwroot\assets\img\app\browsers\safari.svg" />
+    <Content Include="wwwroot\assets\img\app\feed\genom.png" />
+    <Content Include="wwwroot\assets\img\app\feed\my-little-kitten.png" />
+    <Content Include="wwwroot\assets\img\app\feed\new-york-location.png" />
+    <Content Include="wwwroot\assets\img\app\feed\vader-and-me-preview.png" />
+    <Content Include="wwwroot\assets\img\app\my-app-logo.png" />
+    <Content Include="wwwroot\assets\img\app\profile\Alexander.png" />
+    <Content Include="wwwroot\assets\img\app\profile\Andrey.png" />
+    <Content Include="wwwroot\assets\img\app\profile\Kostya.png" />
+    <Content Include="wwwroot\assets\img\app\profile\Nasta.png" />
+    <Content Include="wwwroot\assets\img\app\profile\Nick.png" />
+    <Content Include="wwwroot\assets\img\app\profile\Vlad.png" />
+    <Content Include="wwwroot\assets\img\app\skin-thumbnails\01_default.jpg" />
+    <Content Include="wwwroot\assets\img\app\skin-thumbnails\02_transparent.jpg" />
+    <Content Include="wwwroot\assets\img\app\skin-thumbnails\03_blue.jpg" />
+    <Content Include="wwwroot\assets\img\app\skin-thumbnails\04_peachy.jpg" />
+    <Content Include="wwwroot\assets\img\app\skin-thumbnails\05_material.jpg" />
+    <Content Include="wwwroot\assets\img\app\skin-thumbnails\06_transblue.jpg" />
+    <Content Include="wwwroot\assets\img\app\todo\check-icon.png" />
+    <Content Include="wwwroot\assets\img\app\typography\banner.png" />
+    <Content Include="wwwroot\assets\img\app\typography\typo01.png" />
+    <Content Include="wwwroot\assets\img\app\typography\typo03.png" />
+    <Content Include="wwwroot\assets\img\app\typography\typo04.png" />
+    <Content Include="wwwroot\assets\img\app\typography\typo05.png" />
+    <Content Include="wwwroot\assets\img\app\typography\typo06.png" />
+    <Content Include="wwwroot\assets\img\app\typography\typo07.png" />
+    <Content Include="wwwroot\assets\img\arrow-green-up.svg" />
+    <Content Include="wwwroot\assets\img\arrow-red-down.svg" />
+    <Content Include="wwwroot\assets\img\blue-bg.jpg" />
+    <Content Include="wwwroot\assets\img\blur-bg-blurred.jpg" />
+    <Content Include="wwwroot\assets\img\blur-bg-mobile.jpg" />
+    <Content Include="wwwroot\assets\img\blur-bg.jpg" />
+    <Content Include="wwwroot\assets\img\chernika.png" />
+    <Content Include="wwwroot\assets\img\comments.svg" />
+    <Content Include="wwwroot\assets\img\face.svg" />
+    <Content Include="wwwroot\assets\img\green-bg.jpg" />
+    <Content Include="wwwroot\assets\img\money.svg" />
+    <Content Include="wwwroot\assets\img\peachy-bg.jpg" />
+    <Content Include="wwwroot\assets\img\person.svg" />
+    <Content Include="wwwroot\assets\img\refresh.svg" />
+    <Content Include="wwwroot\assets\img\shopping-cart.svg" />
+    <Content Include="wwwroot\assets\img\sky-bg.jpg" />
+    <Content Include="wwwroot\assets\img\theme\icon\feed\feed-image.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\feed\feed-location.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\feed\feed-video.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Alien.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Analytics.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Apartment.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Batman.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Beach.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Bell.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Bonsai.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Boss-3.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Boss-5.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Burglar.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Bus.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Candy.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Checklist.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Cheese.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Chessboard.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Clipboard-Plan.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Desert.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Dna.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Euro-Coin.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Food-Dome.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Hacker.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Images.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Key.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Laptop-Signal.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Locked-Cloud.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Love-Letter.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Magician.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Makeup.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Medal-2.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Microscope.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Mind-Map-Paper.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Money-Increase.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Music-Equalizer.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Ninja.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Online-Shopping.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Pantone.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Party-Poppers.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Phone-Booth.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Programming.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Santa.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Shop.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Street-View.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Student-3.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Surfer.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Surgeon.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Tower.svg" />
+    <Content Include="wwwroot\assets\img\theme\icon\kameleon\Vector.svg" />
+    <Content Include="wwwroot\assets\img\theme\no-photo.png" />
+    <Content Include="wwwroot\assets\img\theme\palette.png" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\arrowDown.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\arrowUp.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\export.png" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\homeIcon.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\homeIconWhite.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\minus.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\panDown.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\panLeft.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\panRight.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\panUp.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\plus.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\xIcon.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\ammap\xIconH.gif" />
+    <Content Include="wwwroot\assets\img\theme\vendor\leaflet\marker-icon-2x.png" />
+    <Content Include="wwwroot\assets\img\theme\vendor\leaflet\marker-icon.png" />
+    <Content Include="wwwroot\assets\img\theme\vendor\leaflet\marker-shadow.png" />
+    <Content Include="wwwroot\assets\img\transblue-bg.jpg" />
+  </ItemGroup>
+  <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>

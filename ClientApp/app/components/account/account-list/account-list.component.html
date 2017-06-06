@@ -1,0 +1,20 @@
+﻿<h1>Account Summary <small>June 2nd 2017</small></h1>
+
+<div class="panel panel-default panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Banking Accounts</h3>
+  </div>
+  <div class="panel-body">
+    <p *ngIf="!bankAccounts">No banking accounts found.</p>
+    <account-summary *ngFor="let account of bankAccounts" [account]="account"></account-summary>
+  </div>
+</div>
+<div class="panel panel-default panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Investment Accounts</h3>
+  </div>
+  <div class="panel-body">
+    <p *ngIf="!investAccounts">No investment accounts found.</p>
+    <account-summary *ngFor="let account of investAccounts" [account]="account"></account-summary>
+  </div>
+</div>
