@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using QuantIREnergy2.Data;
+using AutoMapper;
 
 namespace QuantIREnergy2
 {
@@ -28,7 +29,7 @@ namespace QuantIREnergy2
         {
             // Add framework services.
             services.AddMvc();
-
+            services.AddAutoMapper();
             var connection = @"Server=localhost;Database=QuantIREnergyDB;Trusted_Connection=True;";
             services.AddDbContext<QuantContext>(options => options.UseSqlServer(connection));
         }

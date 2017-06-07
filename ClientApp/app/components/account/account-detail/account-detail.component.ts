@@ -1,25 +1,27 @@
-﻿import { Component, Input, OnInit } from '@angular/core';
+﻿
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AccountTransaction } from '../../shared/account-transaction.type';
+
 import { AccountDetail } from '../../shared/account-detail.type';
 import { AccountService } from '../../shared/account.service';
+import { AccountTransaction } from '../../shared/account-transaction.type';
 
 @Component({
-    selector: 'account-detail',
-    templateUrl: './account-detail.component.html'
+  selector: 'account-detail',
+  templateUrl: './account-detail.component.html'
 })
 export class AccountDetailComponent implements OnInit {
 
-    @Input() accountDetail: AccountDetail;
-    
-    constructor(
-        private accountService: AccountService,
-        private activatedRoute: ActivatedRoute) {
-    }
+  @Input() accountDetail: AccountDetail;
 
-    ngOnInit() {
-        let id = this.activatedRoute.snapshot.params['id'] as string;
-        this.accountService.getAccountDetail(id)
-            .then(accountDetail => this.accountDetail = accountDetail);
-    }
+  constructor(
+    private accountService: AccountService,
+    private activatedRoute: ActivatedRoute) {
+  }
+
+  ngOnInit() {
+    let id = this.activatedRoute.snapshot.params['id'] as string;
+    this.accountService.getAccountDetail(id)
+      .then(accountDetail => this.accountDetail = accountDetail);
+  }
 }

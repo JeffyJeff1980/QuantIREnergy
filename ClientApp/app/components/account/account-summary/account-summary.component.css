@@ -1,4 +1,5 @@
 ﻿.mouseOver:hover {
   background: #337ab7;
   color: white;
+  cursor: pointer;
 }

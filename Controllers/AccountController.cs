@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuantIREnergy2.Data;
 using QuantIREnergy2.Models;
@@ -14,10 +15,12 @@ namespace QuantIREnergy2.Controllers
   public class AccountController : Controller
   {
     private QuantContext _quantContext;
+    private readonly IMapper _mapper;
 
-    public AccountController(QuantContext context)
+    public AccountController(QuantContext context, IMapper mapper)
     {
       _quantContext = context;
+      _mapper = mapper;
     }
 
     private static AccountSummary[] _accountSummaries = new AccountSummary[]
@@ -28,27 +31,35 @@ namespace QuantIREnergy2.Controllers
     };
 
     [HttpGet("[action]")]
-    public IActionResult GetAccountSummaries()
+    public async Task<IActionResult> GetAccountSummaries()
     {
-        return new ObjectResult(_accountSummaries);
-    }
+      var accounts = await _quantContext.Accounts.Include(s => s.Transactions).ToListAsync();
+      var accountSummaries = new List<AccountSummary>();
 
-    [HttpGet("[action]")]
-    public async Task<IActionResult> GetAccountSummariesFromDB()
-    {
-      var accountSummaries = await _quantContext.Accounts
-        .Include(s => s.Transactions).ToListAsync();
+      foreach (var account in accounts)
+      {
+        var model = _mapper.Map<Account, AccountSummary>(account);
+        accountSummaries.Add(model);
+      }
 
-      return new ObjectResult(_accountSummaries);
+      return new ObjectResult(accountSummaries);
     }
 
     [HttpGet("[action]/{id}")]
     public IActionResult GetAccountDetail(string id)
     {
-      var summary = _accountSummaries.FirstOrDefault(a => a.AccountNumber == id);
-      if (summary == null)
+      Account accountDetail = null;
+
+      try
+      {
+        accountDetail = _quantContext.Accounts.Where(a => a.Id == Int32.Parse(id)).SingleOrDefault();
+      }
+      catch (InvalidOperationException e) { }
+
+      if (accountDetail == null)
         return NotFound();
 
+      var model = _mapper.Map<Account, AccountSummary>(accountDetail);
       var random = new Random();
       var transactions = new List<AccountTransaction>();
       for (int i = 0; i < 15; i++)
@@ -61,7 +72,7 @@ namespace QuantIREnergy2.Controllers
         });
       }
 
-      return new ObjectResult(new AccountDetail { AccountSummary = summary, AccountTransactions = transactions.ToArray() });
+      return new ObjectResult(new AccountDetail { AccountSummary = model, AccountTransactions = transactions.ToArray() });
     }
   }
 }
