@@ -10,5 +10,6 @@ namespace QuantIREnergy2.Models
         public DateTime InvoiceDate { get; set; }
         public DateTime PaymentDueDate { get; set; }
         public decimal TotalNetCharge { get; set; }
+        public bool IsReceived { get; set; }
     }
 }

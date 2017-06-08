@@ -1,15 +1,17 @@
-﻿namespace QuantIREnergy2.Models
+﻿using System;
+
+namespace QuantIREnergy2.Models
 {
     public class Transaction
     {
         public int Id { get; set; }
         public TransactionType Type { get; set; }
-        public decimal Quantity { get; set; }
-        public decimal Amount { get; set; }
+        public DateTime TransactionDate { get; set; }
+        public decimal Balance { get; set; }
     }
 
     public enum TransactionType
     {
-        Bid, Offer
+        Debit, Credit
     }
 }

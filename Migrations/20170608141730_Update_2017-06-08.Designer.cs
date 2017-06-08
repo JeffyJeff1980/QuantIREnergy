@@ -9,9 +9,10 @@ using QuantIREnergy2.Models;
 namespace QuantIREnergy2.Migrations
 {
     [DbContext(typeof(QuantContext))]
-    partial class QuantContextModelSnapshot : ModelSnapshot
+    [Migration("20170608141730_Update_2017-06-08")]
+    partial class Update_20170608
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
